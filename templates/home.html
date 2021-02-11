@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+        <style>
+        body { font-family: arial; margin: 20px; }
+        td { padding: 5px; }
+        .bullish { background: green; color: white; }
+        .bearish { background: red; color: white; }
+        </style>
+
+</head>
+<body>
+
+<h1> Technical Indicator</h1>
+<form>
+
+    <select name="patterns">
+     {% for pat in candlestick_patterns%}
+
+
+        <option value="{{pat}}">{{ candlestick_patterns[pat] }}</option>
+     {% endfor %}
+
+    </select>
+ <input type="submit" value="Scan" />
+ </form>
+
+<table>
+    <tr>
+            <th>symbol</th>
+            <th>company</th>
+            <th>signal</th>
+        </tr>
+        {% for reqID,msg,rc in req_list %}
+          <tr>
+                <td>
+                    {{reqID}}
+                </td>
+                <td>
+                    {{msg}}
+                </td>
+                <td >
+                     {{rc}}
+                </td>
+          </tr>
+
+                    {% endfor %}
+
+</table>
+
+</body>
+
+
+</html>
