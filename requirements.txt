@@ -14,7 +14,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 mlxtend==0.18.0
 multitasking==0.0.9
-pandas==1.2.2
+pandas
 pylint==2.6.0
 python-dateutil==2.8.1
 pytz==2021.1
