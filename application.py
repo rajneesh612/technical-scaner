@@ -11,9 +11,9 @@ from patterns import candlestick_patterns
 from sys import argv
 
 from flask import Flask
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def home():
     pattern= request.args.get('patterns',None)
     stock_dict ={"company":[],"Pattern":[] , "type":[]};
@@ -63,7 +63,7 @@ def home():
     return render_template('home.html', candlestick_patterns=candlestick_patterns, req_list=zip(stock_name,stock_patter,stock_trend) )
 
 
-@app.route('/snapshot')
+@application.route('/snapshot')
 def snapshot():
     f = open("data/data.csv", "r")
     companies = csv.reader(f)
